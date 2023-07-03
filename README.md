@@ -14,7 +14,7 @@
 ## General Information
 - Website about pokemons
 - You can check all the pokemon via their name or their type
- 
+ -You can catch pokemons by completing quizz about them 
 ## Technologies Used
 - NextJs
 - Tailwind
@@ -23,6 +23,8 @@
 ## Features
 - Postgres
 - PokeApiv2
+- Keycloak
+- Lombok
 
 ## Setup
   ...
@@ -37,6 +39,8 @@ Project is: _in progress_.
 TODO:
 - Add keycloak security
 - Add frontend
+- Add questions for quizz{db}
+- Add possibilty to catch pokemons{front}
 
 ## Contact
-Created by [Dawid Brzeski](https://github.com/Leiser619) [dawidsd123@gmail.com](https://gmail.com)- feel free to contact me!
+Created by [Dawid Brzeski](https://github.com/Leiser619) [dawidsd123@gmail.com](https://gmail.com) 
