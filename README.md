@@ -20,15 +20,15 @@
 - Tailwind
 - Java
 - Java Springboot
-
-## Features
 - Postgres
 - PokeApiv2
 - Keycloak
 - Lombok
 - Jwt
 - Spring Security
-
+## Features
+-Simple backend added
+-Star
 ## Setup
   ...
 
@@ -37,7 +37,6 @@
 
 ## Project Status
 Project is: _starting_.
--Simple backend added .
 
 ## Room for Improvement
 TODO:
@@ -47,6 +46,7 @@ TODO:
 - Add possibility to catch pokemons{front}
 - Add possibility to change interface language(via java security)
 - Add possibility to print pokemon sheets to pdf
+- Maybe add some data from pokemon go like a spawn region on a map or current events
 
 ## Contact
 Created by [Dawid Brzeski](https://github.com/Leiser619) [dawidsd123@gmail.com](https://gmail.com) 
