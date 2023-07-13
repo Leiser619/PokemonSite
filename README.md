@@ -18,6 +18,7 @@
 ## Technologies Used
 - NextJs
 - Tailwind
+- Java
 - Java Springboot
 
 ## Features
@@ -36,6 +37,7 @@
 
 ## Project Status
 Project is: _starting_.
+Simple backend added .
 
 ## Room for Improvement
 TODO:
