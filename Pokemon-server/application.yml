@@ -1,0 +1,9 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://localhost:8080/realms/adb
+          jwk-set-uri: ${spring.security.resourceserver.jwk.issuer-uri}/protocol/openid-connect/certs
+server:
+  port:8081
