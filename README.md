@@ -37,7 +37,7 @@
 
 ## Project Status
 Project is: _starting_.
-Simple backend added .
+-Simple backend added .
 
 ## Room for Improvement
 TODO:
