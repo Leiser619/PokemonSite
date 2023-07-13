@@ -33,14 +33,16 @@
   ...
 
 ## Project Status
-Project is: _in progress_.
+Project is: _starting_.
 
 ## Room for Improvement
 TODO:
 - Add keycloak security
 - Add frontend
 - Add questions for quizz{db}
-- Add possibilty to catch pokemons{front}
+- Add possibility to catch pokemons{front}
+- Add possibility to change interface language(via java security)
+- Add possibility to print pokemon sheets to pdf
 
 ## Contact
 Created by [Dawid Brzeski](https://github.com/Leiser619) [dawidsd123@gmail.com](https://gmail.com) 
