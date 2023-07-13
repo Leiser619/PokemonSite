@@ -46,6 +46,7 @@ TODO:
 - Add possibility to catch pokemons{front}
 - Add possibility to change interface language(via java security)
 - Add possibility to print pokemon sheets to pdf
+- Add docker files that will start everything
 - OPTIONAL add some data from pokemon go like a spawn region on a map or current events
 
 ## Contact
