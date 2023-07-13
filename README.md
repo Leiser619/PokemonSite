@@ -25,6 +25,8 @@
 - PokeApiv2
 - Keycloak
 - Lombok
+- Jwt
+- Spring Security
 
 ## Setup
   ...
