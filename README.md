@@ -26,6 +26,7 @@
 - Lombok
 - Jwt
 - Spring Security
+- Docker
 ## Features
 -Simple backend added
 -Star
