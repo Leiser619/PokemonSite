@@ -31,7 +31,11 @@
 -Simple backend added
 -Star
 ## Setup
-  ...
+  You have to run docker on your pc i had a problem on windows but if you  on linux everything works.
+  To start docker type  $service docker start
+  Then go to main backend folder and run $docker-compose up -d
+
+  ....
 
 ## Usage
   ...
