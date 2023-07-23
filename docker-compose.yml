@@ -24,9 +24,7 @@ services:
       DB_USER: keycloak
       DB_SCHEMA: public
       DB_PASSWORD: password
-      KEYCLOAK_USER: PokeAdmin
+      KEYCLOAK_USER:  Admin
       KEYCLOAK_PASSWORD: admin
-    ports:
-      - 8080:8080
     depends_on:
       - postgres

@@ -1,4 +1,4 @@
-package notepad.NotePad.security;
+package pokemonsiteserver.demo.security;
 
 import lombok.RequiredArgsConstructor;
 import notepad.NotePad.repository.UserRepository;

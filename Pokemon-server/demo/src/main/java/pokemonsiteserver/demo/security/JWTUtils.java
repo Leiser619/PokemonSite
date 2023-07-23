@@ -1,4 +1,4 @@
-package notepad.NotePad.security;
+package pokemonsiteserver.demo.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
