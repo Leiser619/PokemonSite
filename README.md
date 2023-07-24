@@ -53,6 +53,7 @@ TODO:
 - Add possibility to print pokemon sheets to pdf
 - Add docker files that will start everything
 - OPTIONAL add some data from pokemon go like a spawn region on a map or current events
+- OPTIONAL add translation methods to eng and pl
 
 ## Contact
 Created by [Dawid Brzeski](https://github.com/Leiser619) [dawidsd123@gmail.com](https://gmail.com) 
