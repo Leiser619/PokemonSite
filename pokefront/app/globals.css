@@ -41,3 +41,15 @@ body {
   min-height: 250vh;
   background-color: aqua;
 }
+.pokeballSpin{
+  animation-name: pokeballLoading;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+}
+@keyframes pokeballLoading {
+  0% {transform:rotate(0deg)}
+  25% {transform:rotate(370deg)}
+  50% {transform:rotate(360deg)}
+  75% {transform:rotate(-10deg)}
+  100% {transform:rotate(0deg)}
+}
