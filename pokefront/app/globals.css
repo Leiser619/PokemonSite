@@ -43,13 +43,13 @@ body {
 }
 .pokeballSpin{
   animation-name: pokeballLoading;
-  animation-iteration-count: infinite;
-  animation-duration: 3s;
+  animation-duration: 5s;
 }
 @keyframes pokeballLoading {
   0% {transform:rotate(0deg)}
-  25% {transform:rotate(370deg)}
-  50% {transform:rotate(360deg)}
-  75% {transform:rotate(-10deg)}
-  100% {transform:rotate(0deg)}
+  19% {transform:rotate(370deg)}
+  37% {transform:rotate(360deg)}
+  57% {transform:rotate(-10deg)}
+  75% {transform:rotate(0deg)}
+  100% {transform: scale(300)}
 }

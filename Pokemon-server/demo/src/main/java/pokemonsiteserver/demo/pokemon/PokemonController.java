@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import pokemonsiteserver.demo.pokemon.resources.PokemonConfig;
 import pokemonsiteserver.demo.pokemon.resources.PokemonEntity;
 import pokemonsiteserver.demo.pokemon.resources.Pokemons;
-import pokemonsiteserver.demo.pokemon.resources.PokemonsFromType;
 
 import java.io.IOException;
 
@@ -27,7 +26,7 @@ public class PokemonController extends PokemonConfig {
     }
 
     @GetMapping("/type/{pokemonType}")
-    public PokemonsFromType getPokemonByType(@PathVariable String pokemonType) throws IOException {
+    public Pokemons getPokemonByType(@PathVariable String pokemonType) throws IOException {
         return pokemonService.getPokemonByType(pokemonType);
     }
 
