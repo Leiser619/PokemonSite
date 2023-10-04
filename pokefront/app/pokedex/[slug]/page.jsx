@@ -1,5 +1,5 @@
 "use client"
-import React, { createElement, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MiniPokeball from '@/components/MiniPokeball';
 import PokeballTop from '@/components/PokeballTop';
 import PokeballBottom from '@/components/PokeballBottom';
@@ -18,12 +18,12 @@ export default function Page({ params }) {
   //     console.log(data)
   //     setData(data)
   //   }
-  
+
   const [showTable, setShowTable]=useState(false)
   useEffect(()=>{
     const showTableTimeout = setTimeout(() => {
       setShowTable(true);
-    }, 4500);
+    }, 3801);
     
     return () => {
       clearTimeout(showTableTimeout);
@@ -42,13 +42,17 @@ export default function Page({ params }) {
     };
    },[]);
   
-   const scrollToCenter = () => {
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
-    const scrollTo = documentHeight / 2 - windowHeight / 2;
-    window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+   const mainClass = () => {
+    useEffect(() => {
+    window.scrollTo({
+      top: 900,
+      left: 0,
+      behavior: "smooth",
+    });
+    }, []);
   };
-  scrollToCenter();
+  mainClass()
+
   return (
    <main id='main' className='flex flex-column justify-center align-middle h-[300vh] pt-[10vh] bg-[#fff] max-w-[100vw]'>
     {showMiniPokeball && (
