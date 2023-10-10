@@ -1,10 +1,7 @@
 package pokemonsiteserver.demo.pokemon;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pokemonsiteserver.demo.pokemon.resources.PokemonConfig;
 import pokemonsiteserver.demo.pokemon.resources.PokemonEntity;
 import pokemonsiteserver.demo.pokemon.resources.Pokemons;
@@ -12,6 +9,7 @@ import pokemonsiteserver.demo.pokemon.resources.Pokemons;
 import java.io.IOException;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000/*")
 @RequestMapping("/api/pokemon")
 @RequiredArgsConstructor
 public class PokemonController extends PokemonConfig {

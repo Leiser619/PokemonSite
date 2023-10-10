@@ -6,60 +6,63 @@ import PokeballBottom from '@/components/PokeballBottom';
 import PokemonRecord from '@/components/PokemonRecord';
 
 export default function Page({ params }) {
+  const [data, setData] = useState([]);
+  
+  useEffect(() => {
+    getData();
+  }, []);
 
-  //   const [data, setData]=useState([]) 
-  //   useEffect(() => {
-  //     getData()
-  //   }, []);
+  const getData = async () => {
+    try {
+      const response = await fetch(`http://localhost:8081/api/pokemon/name/${params.slug}`);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      console.log(data);
+      setData(data);
+    } catch (error) {
+      console.error('Błąd podczas pobierania danych z API:', error);
+    }
+  };
 
-  // const getData = async () => {
-  //     const response = await fetch(`http://localhost:8081/api/pokemon/name/${params.slug}`)
-  //     const data = await response.json();
-  //     console.log(data)
-  //     setData(data)
-  //   }
-
-  const [showTable, setShowTable]=useState(false)
-  useEffect(()=>{
+  const [showTable, setShowTable] = useState(false);
+  useEffect(() => {
     const showTableTimeout = setTimeout(() => {
       setShowTable(true);
     }, 3801);
-    
+
     return () => {
       clearTimeout(showTableTimeout);
     };
-   },[]);
+  }, []);
 
-  const [showMiniPokeball, setShowMiniPokeball] = useState(true); 
+  const [showMiniPokeball, setShowMiniPokeball] = useState(true);
   useEffect(() => {
     const showMiniPokeballTimeout = setTimeout(() => {
       setShowMiniPokeball(false);
-
     }, 3800);
 
     return () => {
       clearTimeout(showMiniPokeballTimeout);
     };
-   },[]);
-  
-   const mainClass = () => {
-    useEffect(() => {
+  }, []);
+
+  useEffect(() => {
     window.scrollTo({
       top: 900,
       left: 0,
       behavior: "smooth",
     });
-    }, []);
-  };
-  mainClass()
+  }, []);
 
   return (
-   <main id='main' className='flex flex-column justify-center align-middle h-[300vh] pt-[10vh] bg-[#fff] max-w-[100vw]'>
-    {showMiniPokeball && (
-    <div className='flex flex-col justify-center align-middle pt-[10vh] bg-[#fff]'>
-    <MiniPokeball id='miniPokeball' />
-    </div>
-    )}
+    <main id='main' className='flex flex-column justify-center align-middle h-[300vh] pt-[10vh] bg-[#fff] max-w-[100vw]'>
+      {showMiniPokeball && (
+        <div className='flex flex-col justify-center align-middle pt-[10vh] bg-[#fff]'>
+          <MiniPokeball id='miniPokeball' />
+        </div>
+      )}
       {showTable && (
         <div className='flex flex-col justify-center align-middle pt-[10vh] bg-[#fff]'>
           <PokeballTop id='pokeballTop' />
@@ -67,6 +70,19 @@ export default function Page({ params }) {
           <PokeballBottom id='pokeballBottom' />
         </div>
       )}
-  </main>
+      {data && (
+        <div className='bg-black w-[400px] h-[500px] text-white'>
+          <h1>{data.name}</h1>
+          {data.types &&
+            Object.keys(data.types).map((item, i) => (
+              <div key={i} className="report">
+                {data.types[item].map((media, ind) => (
+                  <div key={ind}>{media.name}</div>
+                ))}
+              </div>
+            ))}
+        </div>
+      )}
+    </main>
   );
 }
