@@ -9,7 +9,7 @@ import pokemonsiteserver.demo.pokemon.resources.Pokemons;
 import java.io.IOException;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000/*")
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/pokemon")
 @RequiredArgsConstructor
 public class PokemonController extends PokemonConfig {

@@ -73,14 +73,9 @@ export default function Page({ params }) {
       {data && (
         <div className='bg-black w-[400px] h-[500px] text-white'>
           <h1>{data.name}</h1>
-          {data.types &&
-            Object.keys(data.types).map((item, i) => (
-              <div key={i} className="report">
-                {data.types[item].map((media, ind) => (
-                  <div key={ind}>{media.name}</div>
-                ))}
-              </div>
-            ))}
+          {data.types && data.types.map((type, index) => (
+      <h1 key={index}>{type.type.name}</h1>
+    ))}
         </div>
       )}
     </main>
