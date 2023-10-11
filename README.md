@@ -1,6 +1,6 @@
 # PokemonSite
 > Site about pokemons backend will work on java spring boot and front on next js
- 
+> 
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
@@ -14,7 +14,7 @@
 ## General Information
 - Website about pokemons
 - You can check all the pokemon via their name or their type
- -You can catch pokemons by completing quizz about them 
+-You can catch pokemons by completing quizz about the them
 ## Technologies Used
 - NextJs
 - Tailwind
@@ -31,14 +31,12 @@
 -Simple backend added
 -Star
 ## Setup
-  You have to run docker on your pc i had a problem on windows but if you  on linux everything works.
-  To start docker type  $service docker start
-  Then go to main backend folder and run $docker-compose up -d
-
-  ....
+You have to run docker on your pc i had a problem on windows but if you  on linux everything works.
+To start docker type  $service docker start
+Then go to main backend folder and run $docker-compose up -d
 
 ## Usage
-  ...
+...
 
 ## Project Status
 Project is: _starting_.
