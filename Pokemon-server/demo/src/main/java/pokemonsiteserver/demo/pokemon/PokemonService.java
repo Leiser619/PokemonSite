@@ -7,7 +7,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import pokemonsiteserver.demo.pokemon.resources.PokemonEntity;
+import pokemonsiteserver.demo.pokemon.resources.PokemonToList;
 import pokemonsiteserver.demo.pokemon.resources.Pokemons;
 
 import java.io.IOException;
@@ -29,14 +29,14 @@ public class PokemonService {
         return pokemon.getBody();
     }
 
-    public PokemonEntity getPokemonByName(String pokemonName) throws IOException {
+    public PokemonToList getPokemonByName(String pokemonName) throws IOException {
 
         RestTemplate rest = new RestTemplate();
-        ResponseEntity<PokemonEntity> pokemon=rest.exchange(
+        ResponseEntity<PokemonToList> pokemon=rest.exchange(
                 "https://pokeapi.co/api/v2/pokemon/"+pokemonName.toLowerCase(),
                 HttpMethod.GET,
                 HttpEntity.EMPTY,
-                PokemonEntity.class
+                PokemonToList.class
         );
         return pokemon.getBody();
     }

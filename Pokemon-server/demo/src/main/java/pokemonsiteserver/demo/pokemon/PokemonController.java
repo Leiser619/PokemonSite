@@ -3,7 +3,7 @@ package pokemonsiteserver.demo.pokemon;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import pokemonsiteserver.demo.pokemon.resources.PokemonConfig;
-import pokemonsiteserver.demo.pokemon.resources.PokemonEntity;
+import pokemonsiteserver.demo.pokemon.resources.PokemonToList;
 import pokemonsiteserver.demo.pokemon.resources.Pokemons;
 
 import java.io.IOException;
@@ -19,7 +19,7 @@ public class PokemonController extends PokemonConfig {
     }
 
     @GetMapping("/name/{pokemonName}")
-    public PokemonEntity getPokemonByName(@PathVariable String pokemonName) throws IOException {
+    public PokemonToList getPokemonByName(@PathVariable String pokemonName) throws IOException {
         return pokemonService.getPokemonByName(pokemonName);
     }
 

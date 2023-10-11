@@ -4,6 +4,7 @@ import MiniPokeball from '@/components/MiniPokeball';
 import PokeballTop from '@/components/PokeballTop';
 import PokeballBottom from '@/components/PokeballBottom';
 import PokemonRecord from '@/components/PokemonRecord';
+import PokemonRecordEmpty from '@/components/PokemonRecordEmpty';
 
 export default function Page({ params }) {
   const [data, setData] = useState([]);
@@ -64,20 +65,21 @@ export default function Page({ params }) {
         </div>
       )}
       {showTable && (
-        <div className='flex flex-col justify-center align-middle pt-[10vh] bg-[#fff]'>
+        <div className='flex flex-col justify-center align-middle pt-[10vh] bg-[#fff] w-[80%]'>
           <PokeballTop id='pokeballTop' />
-          <PokemonRecord id='pokeballRecord' />
+          <PokemonRecordEmpty/>
+          <PokemonRecord id='pokeballRecord' data={data}/>
           <PokeballBottom id='pokeballBottom' />
         </div>
       )}
-      {data && (
+      {/* {data && (
         <div className='bg-black w-[400px] h-[500px] text-white'>
           <h1>{data.name}</h1>
           {data.types && data.types.map((type, index) => (
-      <h1 key={index}>{type.type.name}</h1>
+          <h1 key={index}>{type.type.name}</h1>
     ))}
         </div>
-      )}
+      )} */}
     </main>
   );
 }
