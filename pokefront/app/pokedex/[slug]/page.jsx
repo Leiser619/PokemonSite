@@ -58,28 +58,20 @@ export default function Page({ params }) {
   }, []);
 
   return (
-    <main id='main' className='flex flex-column justify-center align-middle h-[300vh] pt-[10vh] bg-[#fff] max-w-[100vw]'>
+    <main id='main' className='flex flex-column justify-center align-middle h-[100vh] bg-[#fff]'>
       {showMiniPokeball && (
         <div className='flex flex-col justify-center align-middle pt-[10vh] bg-[#fff]'>
           <MiniPokeball id='miniPokeball' />
         </div>
       )}
       {showTable && (
-        <div className='flex flex-col justify-center align-middle pt-[10vh] bg-[#fff] w-[80%]'>
+        <div className='flex flex-col justify-center align-middle pt-[10vh] bg-[#fff] w-[90%] h-[100%]'>
           <PokeballTop id='pokeballTop' />
           <PokemonRecordEmpty/>
           <PokemonRecord id='pokeballRecord' data={data}/>
           <PokeballBottom id='pokeballBottom' />
         </div>
       )}
-      {/* {data && (
-        <div className='bg-black w-[400px] h-[500px] text-white'>
-          <h1>{data.name}</h1>
-          {data.types && data.types.map((type, index) => (
-          <h1 key={index}>{type.type.name}</h1>
-    ))}
-        </div>
-      )} */}
     </main>
   );
 }
