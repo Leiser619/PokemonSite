@@ -31,8 +31,8 @@ const PokemonRecord = ({data}) => {
               ))}
               </div>
               {/* -----ATTACKS----- */}
-              <div className='flex-col  w-[150px] h-[60%] overflow-hidden'>
-                <div class="h-[100%] overflow-y-scroll">
+              <div className='flex-col  w-[165px] h-[60%] overflow-hidden'>
+                <div className="h-[100%] overflow-y-scroll">
                   {data.moves && data.moves.map((move, index) => (
                       <div key={index}>
                         {move.move.name}

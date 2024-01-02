@@ -5,13 +5,23 @@ import PokeballTop from '@/components/PokeballTop';
 import PokeballBottom from '@/components/PokeballBottom';
 import PokemonRecord from '@/components/PokemonRecord';
 import PokemonRecordEmpty from '@/components/PokemonRecordEmpty';
+import backgroundImage from '@/components/BackgroundImage';
 
 export default function Page({ params }) {
   const [data, setData] = useState([]);
   
   useEffect(() => {
     getData();
+    setBackground();
   }, []);
+
+
+  const setBackground = () => {
+    const backgroundNumber=Math.floor(Math.random() * (6- 1 + 1)) + 1;
+    const backgroundUrl=`@/public/background/${backgroundNumber}.png`;
+    console.log("huhuhuhuj "+backgroundUrl)
+    document.body.style.backgroundImage=`url(${backgroundUrl})`;
+  }
 
   const getData = async () => {
     try {
