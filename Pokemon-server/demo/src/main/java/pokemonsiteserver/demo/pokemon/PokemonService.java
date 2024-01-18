@@ -32,13 +32,19 @@ public class PokemonService {
     public PokemonEntity getPokemonByName(String pokemonName) throws IOException {
 
         RestTemplate rest = new RestTemplate();
+        try{
         ResponseEntity<PokemonEntity> pokemon=rest.exchange(
                 "https://pokeapi.co/api/v2/pokemon/"+pokemonName.toLowerCase(),
                 HttpMethod.GET,
                 HttpEntity.EMPTY,
                 PokemonEntity.class
         );
-        return pokemon.getBody();
+            return pokemon.getBody();
+        }
+        catch(Exception e){
+            System.out.println("Pokemon does not exist");
+        }
+        return null;
     }
 
     public Pokemons getPokemonByType(String pokemonType) throws IOException {
@@ -52,8 +58,4 @@ public class PokemonService {
         );
         return pokemon.getBody();
     }
-
-
-
-
 }

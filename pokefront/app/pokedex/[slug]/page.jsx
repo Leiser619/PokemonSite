@@ -5,22 +5,24 @@ import PokeballTop from '@/components/PokeballTop';
 import PokeballBottom from '@/components/PokeballBottom';
 import PokemonRecord from '@/components/PokemonRecord';
 import PokemonRecordEmpty from '@/components/PokemonRecordEmpty';
-import backgroundImage from '@/components/BackgroundImage';
+import BackgroundImage from '@/components/BackgroundImage';
+import { useRouter } from 'next/router';
+
 
 export default function Page({ params }) {
   const [data, setData] = useState([]);
+  const [backgroundUrl,setBackgroundUrl]=useState('');
   
   useEffect(() => {
     getData();
-    setBackground();
+    getBackgroundUrl();
   }, []);
 
 
-  const setBackground = () => {
+  const getBackgroundUrl = () => {
     const backgroundNumber=Math.floor(Math.random() * (6- 1 + 1)) + 1;
-    const backgroundUrl=`@/public/background/${backgroundNumber}.png`;
-    console.log("huhuhuhuj "+backgroundUrl)
-    document.body.style.backgroundImage=`url(${backgroundUrl})`;
+    const backgroundUrl=`/background/${backgroundNumber}.png`;
+    setBackgroundUrl(backgroundUrl);
   }
 
   const getData = async () => {
@@ -29,11 +31,14 @@ export default function Page({ params }) {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
+
       const data = await response.json();
       console.log(data);
       setData(data);
+
     } catch (error) {
       console.error('Błąd podczas pobierania danych z API:', error);
+      return <h1>404 - Page Not Found</h1>
     }
   };
 
@@ -68,14 +73,15 @@ export default function Page({ params }) {
   }, []);
 
   return (
-    <main id='main' className='flex flex-column justify-center align-middle h-[100vh] bg-[#fff]'>
+    <main id='main' className='flex flex-column justify-center align-middle h-[100vh]'>
       {showMiniPokeball && (
-        <div className='flex flex-col justify-center align-middle pt-[10vh] bg-[#fff]'>
+        <div className='flex flex-col justify-center align-middle pt-[10vh]'>
           <MiniPokeball id='miniPokeball' />
         </div>
       )}
       {showTable && (
-        <div className='flex flex-col justify-center align-middle pt-[10vh] bg-[#fff] w-[90%] h-[100%]'>
+        <div className='flex flex-col justify-center align-middle pt-[10vh]  w-[90%] h-[100%]'>
+          <BackgroundImage backgroundImage={backgroundUrl}/>
           <PokeballTop id='pokeballTop' />
           <PokemonRecordEmpty/>
           <PokemonRecord id='pokeballRecord' data={data}/>
